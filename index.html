@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>餐廳排隊點餐系統</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Restaurant Queue</p>
+          <h1>餐廳排隊點餐系統</h1>
+        </div>
+        <button id="resetBtn" class="secondary-btn">重置排隊</button>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel status-panel">
+          <div class="status-grid">
+            <div class="stat-card accent">
+              <span class="label">第一號</span>
+              <strong id="firstNumber">—</strong>
+            </div>
+            <div class="stat-card">
+              <span class="label">最後一號</span>
+              <strong id="lastNumber">—</strong>
+            </div>
+            <div class="stat-card warn">
+              <span class="label">目前叫號</span>
+              <strong id="currentNumber">—</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel controls-panel">
+          <div class="customer-form">
+            <div class="input-group">
+              <label for="customerName">稱呼</label>
+              <input id="customerName" type="text" placeholder="例如：王小姐" maxlength="20" />
+            </div>
+            <div class="input-group">
+              <label for="customerPhone">電話</label>
+              <input id="customerPhone" type="tel" placeholder="例如：0912-345-678" maxlength="20" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="takeNumberBtn" class="primary-btn">取號</button>
+            <button id="nextBtn" class="primary-btn alt">叫下一位</button>
+          </div>
+
+          <div class="queue-box">
+            <div class="queue-header">
+              <h2>待叫號列表</h2>
+              <span id="queueCount">0 人</span>
+            </div>
+            <div id="queueList" class="queue-list" aria-live="polite"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
