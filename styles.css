@@ -111,6 +111,39 @@ h1 {
   gap: 24px;
 }
 
+.customer-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ebd2c0;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  outline: 2px solid rgba(239, 125, 61, 0.22);
+  border-color: var(--primary);
+}
+
 .actions {
   display: flex;
   gap: 16px;
@@ -180,20 +213,48 @@ button:active {
 .queue-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   min-height: 76px;
+}
+
+.queue-ticket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 120px;
+  padding: 12px 10px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #f1d8c2;
+  box-shadow: 0 10px 25px rgba(105, 72, 47, 0.05);
 }
 
 .queue-badge {
   min-width: 64px;
-  padding: 12px 14px;
+  padding: 10px 14px;
   border-radius: 12px;
-  background: #fff;
-  border: 1px solid #f1d8c2;
+  background: linear-gradient(180deg, #fffaf5, #ffd9ba);
+  border: 1px solid #f7c79e;
   text-align: center;
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: 1.35rem;
+  font-weight: 900;
   color: var(--primary-dark);
+}
+
+.queue-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.queue-meta span {
+  font-weight: 700;
+  color: var(--text);
 }
 
 .empty-state {
@@ -212,6 +273,10 @@ button:active {
   }
 
   .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-form {
     grid-template-columns: 1fr;
   }
 
